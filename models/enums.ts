@@ -10,19 +10,19 @@ enum Enum_Estado_Usuario{
 }
 
 enum Enum_EstadoProyecto{
-    activo="Activo",
-    inactivo="Inactivo"
+    ACTIVO="ACTIVO",
+    INACTIVO="INACTIVO"
 }
 
 enum Enum_FaseProyecto{
-    iniciado='Iniciado',
-    desarrollo='Desarrollo',
-    terminado='Terminado',
-    nulo=''
+    INICIADO='INICIADO',
+    DESARROLLO='DESARROLLO',
+    TERMINADO='TERMINADO',
+    NULO=''
 }
 enum Enum_TipoObjetivo{
-    general='General',
-    específico='Especifico'
+    GENERAL='GENERAL',
+    ESPECIFICO='ESPECIFICO'
 }
 export {
     Enum_Rol,

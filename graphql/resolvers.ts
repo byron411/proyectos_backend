@@ -1,3 +1,4 @@
+import { ProjectModel } from "../models/project";
 import { UserModel } from "../models/users";
 
 const resolvers={
@@ -16,6 +17,10 @@ const resolvers={
                 
             }); 
             return buscado;
+        },
+        Proyectos: async(parent,args)=>{
+            const proyectos=await ProjectModel.find().populate('lider').populate('objetivos');
+            return proyectos;
         }
     },
     Mutation:{
