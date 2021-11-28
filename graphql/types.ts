@@ -20,12 +20,23 @@ type Usuario{
     apellido: String!
     identificacion: String!
     correo:String!
-    estado:Enum_EstadoUsuario!
+    estado:Enum_EstadoUsuario
     rol: Enum_Rol!
 }
 
 type Query{
     Usuarios:[Usuario]
+
+    buscarUsuario(_id:String!):Usuario
+
+    bucarByCampos(
+        nombre: String
+    apellido: String
+    identificacion: String
+    correo:String
+    estado:Enum_EstadoUsuario
+    rol: Enum_Rol
+    ):[Usuario]
 }
 
 type Mutation{
@@ -34,9 +45,20 @@ type Mutation{
         apellido: String!
         identificacion: String!
         correo:String!
-        estado:Enum_EstadoUsuario!
+        estado:Enum_EstadoUsuario
         rol: Enum_Rol!
     ):Usuario
+
+    eliminarUsuario(_id:String, correo:String):Usuario
+
+    modificarUsuario(
+        _id:String!
+        nombre: String
+        apellido: String
+        identificacion: String
+        correo:String
+        estado:Enum_EstadoUsuario
+        rol: Enum_Rol):Usuario
 }
 `;
 
