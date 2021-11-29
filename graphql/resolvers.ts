@@ -19,7 +19,7 @@ const resolvers={
             return buscado;
         },
         Proyectos: async(parent,args)=>{
-            const proyectos=await ProjectModel.find().populate('lider').populate('objetivos');
+            const proyectos=await ProjectModel.find().populate('lider');
             return proyectos;
         }
     },
