@@ -5,6 +5,11 @@ const resolverAvance={
         Avances:async(parent,args)=>{
             const elavance=await AdvanceModel.find().populate('proyecto').populate('creadoPor');
             return elavance;
+        },
+        filtrarAvance: async(parent,args)=>{
+            const miavance=await AdvanceModel.find({
+                proyecto:args.idProyecto}).populate('proyecto');
+                return miavance;
         }
     },
 
