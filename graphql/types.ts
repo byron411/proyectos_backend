@@ -48,6 +48,11 @@ type Objetivo{
     tipo:Enum_TipoObjetivo!
 }
 
+input crearObjetivo{
+    descripcion:String!
+    tipo:Enum_TipoObjetivo!
+}
+
 type Proyecto{
     _id:ID!
     nombre:String!
@@ -98,6 +103,7 @@ type Mutation{
         estado:Enum_EstadoUsuario
         rol: Enum_Rol):Usuario
 
+   
     crearProyecto(
         nombre:String!
         presupuesto:Float!
@@ -106,7 +112,7 @@ type Mutation{
         estado: Enum_EstadoProyecto!
         fase:Enum_FaseProyecto!
         lider:String!
-        objetivos:String
+        objetivos:[crearObjetivo]
     ):Proyecto
 }
 `;

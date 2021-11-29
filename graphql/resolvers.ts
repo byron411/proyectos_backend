@@ -1,4 +1,3 @@
-import { argsToArgsConfig } from "graphql/type/definition";
 import { ProjectModel } from "../models/project";
 import { UserModel } from "../models/users";
 
@@ -70,7 +69,7 @@ const resolvers={
             estado:args.estado,
             fase:args.fase,
             lider:args.lider,
-            //objetivos:args.objetivos,
+            objetivos:args.objetivos,
         });
         return elproyecto;
     },
