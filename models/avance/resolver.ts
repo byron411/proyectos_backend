@@ -8,7 +8,7 @@ const resolverAvance={
         },
         filtrarAvance: async(parent,args)=>{
             const miavance=await AdvanceModel.find({
-                proyecto:args.idProyecto}).populate('proyecto');
+                proyecto:args.idProyecto}).populate('proyecto').populate('creadoPor');
                 return miavance;
         }
     },
