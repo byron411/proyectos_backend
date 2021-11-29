@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import {Enum_Rol,Enum_Estado_Usuario} from './enums'
+import {Enum_Rol,Enum_Estado_Usuario} from '../enums/enums'
 
 
 interface User{
