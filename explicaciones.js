@@ -1,9 +1,9 @@
-import conexion from "./db/db";
-import {UserModel} from "./models/usuario/usuario";
-import {Enum_Rol,Enum_Estado_Usuario, Enum_TipoObjetivo} from "./models/enums/enums";
-import { ProjectModel } from "./models/proyecto/proyecto";
-import { ObjectiveModel } from "./models/objetivo";
-import { AdvanceModel } from "./models/avance/avance";
+import conexion from "./db/db.js";
+import {UserModel} from "./models/usuario/usuario.js";
+import {Enum_Rol,Enum_Estado_Usuario, Enum_TipoObjetivo} from "./models/enums/enums.js";
+import { ProjectModel } from "./models/proyecto/proyecto.js";
+import { ObjectiveModel } from "./models/objetivo.js";
+import { AdvanceModel } from "./models/avance/avance.js";
 const main=async()=>{
     await conexion();
     await AdvanceModel.create({

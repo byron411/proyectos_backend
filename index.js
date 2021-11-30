@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import {ApolloServer} from 'apollo-server-express';
 import dotenv from 'dotenv';
-import conexion from './db/db';
-import { tipos } from './graphql/types';
-import { resolvers } from './graphql/resolvers';
+import conexion from './db/db.js';
+import { tipos } from './graphql/types.js';
+import { resolvers } from './graphql/resolvers.js';
 
 dotenv.config();
 const server = new ApolloServer({

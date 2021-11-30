@@ -1,22 +1,17 @@
-import { Schema, model } from "mongoose";
-import {Enum_TipoObjetivo} from './enums/enums';
-import {ProjectModel} from './proyecto/proyecto';
+import mongoose from 'mongoose';
+import {Enum_TipoObjetivo} from './enums/enums.js';
 
-interface Objective{
-    descripcion:string,
-    tipo: Enum_TipoObjetivo;
-    proyecto: Schema.Types.ObjectId;
-    
-}
+const { Schema, model } = mongoose;
 
-const ObjectiveSchema=new Schema<Objective>({
+
+const ObjectiveSchema=new Schema({
     descripcion:{
         type:String,
         required:true,
     },
     tipo:{
         type:String,
-        enum:Enum_TipoObjetivo,
+        enum:['GENERAL', 'ESPECIFICO'],
         required:true,
     },
     /*proyecto:{
