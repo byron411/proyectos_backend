@@ -17,9 +17,9 @@ const resolverInscripciones={
             return minscripcion;
         },
         aprobarInscripcion:async(parent,args)=>{
-            const inscripcionaprobada=await InscriptionModel.findByIdAndUpdate(args.id,{
+            const inscripcionaprobada=await InscriptionModel.findByIdAndUpdate({_id:args._id},{
                 estado:'ACEPTADO',
-               // fechaIngreso:Date.now(),
+                fechaIngreso:Date.now(),
             });
             return inscripcionaprobada;
         }
