@@ -20,7 +20,7 @@ const resolverInscripciones={
             const inscripcionaprobada=await InscriptionModel.findByIdAndUpdate({_id:args._id},{
                 estado:'ACEPTADO',
                 fechaIngreso:Date.now(),
-            });
+            },{new:true});
             return inscripcionaprobada;
         }
     }

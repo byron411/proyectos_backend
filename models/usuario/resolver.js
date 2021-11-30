@@ -53,7 +53,7 @@ const resolverUsuario={
                 correo:args.correo,
                 estado:args.estado,
                 rol:args.rol,
-            });
+            },{new:true});
             return modificado;
         },
 }
