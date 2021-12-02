@@ -32,6 +32,7 @@ type Mutation{
         correo:String!
         estado:Enum_EstadoUsuario
         rol: Enum_Rol!
+        password:String!
     ):Usuario
     eliminarUsuario(_id:String, correo:String):Usuario
     modificarUsuario(
