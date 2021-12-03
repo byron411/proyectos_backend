@@ -10,7 +10,7 @@ type Mutation{
         estado:Enum_EstadoUsuario
         rol: Enum_Rol!
         password:String!
-    ):String
+    ):String!
 }
 `
 export {tiposAutenticacion};
