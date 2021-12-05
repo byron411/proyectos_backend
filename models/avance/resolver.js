@@ -1,3 +1,4 @@
+import { assertType } from "graphql";
 import { AdvanceModel } from "./avance.js"
 
 const resolverAvance={
@@ -23,6 +24,14 @@ const resolverAvance={
                 creadoPor:args.creadoPor,
             });
             return miavance;
+        },
+        modificarAvance:async(parent,args)=>{
+            const modificado=await AdvanceModel.findByIdAndUpdate({_id:args._id},{
+                fecha:args.fecha,
+    descripcion:args.descripcion,
+    observaciones:args.observaciones
+            },{new:true});
+            return modificado;
         }
     },
 }

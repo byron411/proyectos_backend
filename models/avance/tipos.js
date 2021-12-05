@@ -19,6 +19,13 @@ type Mutation{
         observaciones:[String]
         proyecto:String!
         creadoPor:String!):Avance
+
+    modificarAvance(
+        _id:String!
+        fecha:Date
+    descripcion:String
+    observaciones:[String]
+        ):Avance
 }
 `
 export {tipoAvance};

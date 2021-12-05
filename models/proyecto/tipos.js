@@ -14,6 +14,7 @@ input crearObjetivo{
 }
 
 
+
 type Proyecto{
     _id:ID!
     nombre:String!
@@ -31,6 +32,17 @@ type Proyecto{
 type Query{
     
     Proyectos:[Proyecto]
+    buscarProyectosByLider(lider:String!):[Proyecto]
+    buscarProyectoByCampos(
+        _id:String
+        nombre:String
+        presupuesto:Float
+        fechaInicio:Date
+        fechaFin:Date
+        estado: Enum_EstadoProyecto
+        fase:Enum_FaseProyecto
+        
+    ):[Proyecto]
 }
 
 type Mutation{
@@ -43,6 +55,19 @@ type Mutation{
         estado: Enum_EstadoProyecto!
         fase:Enum_FaseProyecto!
         lider:String!
+        objetivos:[crearObjetivo]
+        
+    ):Proyecto
+
+    modificarProyecto(
+        _id:String!
+        nombre:String
+        presupuesto:Float
+        fechaInicio:Date
+        fechaFin:Date
+        estado: Enum_EstadoProyecto
+        fase:Enum_FaseProyecto
+        lider:String
         objetivos:[crearObjetivo]
     ):Proyecto
 }

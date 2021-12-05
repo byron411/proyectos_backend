@@ -13,7 +13,7 @@ const resolverUsuario={
         },
         bucarByCampos: async(parent,args)=>{
             const buscado= await UserModel.find({
-                estado:args.estado
+                rol:args.rol,
                 
             }); 
             return buscado;
