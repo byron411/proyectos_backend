@@ -27,7 +27,42 @@ const resolversAutenticacion={
                 }),
             };
         },
-        
+        login:async(parent, args)=>{
+            const elbuscado=await UserModel.findOne({
+                correo:args.correo,
+                
+            });
+            
+            if(elbuscado){
+                const comparacion= await bcrypt.compare(args.password, elbuscado.password)
+                console.log('este es el resultado de su comparación', comparacion);
+                if(comparacion){
+                    return {
+                        token:generateToken({
+                            _id:elbuscado._id,
+                            nombre:elbuscado.nombre,
+                            apellido:elbuscado.apellido,
+                            identificacion:elbuscado.identificacion,
+                            correo:elbuscado.correo,
+                            rol:elbuscado.rol
+                        }),
+                    };
+                }
+                else{
+                    return{
+                        token:'Error contraseña'
+                    }
+                }
+                
+            }
+            else{
+                console.log('Usuario no encontrado')
+                return{
+                    token:'usuario no encontrado'
+                }
+            }
+           
+        }//
     }
 }
 export {resolversAutenticacion};

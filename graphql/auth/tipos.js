@@ -17,6 +17,11 @@ type Mutation{
         rol: Enum_Rol!
         password:String!
     ):Token!
+
+    login(
+        correo:String!
+        password:String!
+    ):Token
 }
 `
 export {tiposAutenticacion};
