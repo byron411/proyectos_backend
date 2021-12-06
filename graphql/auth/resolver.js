@@ -62,7 +62,10 @@ const resolversAutenticacion={
                 }
             }
            
-        }//
-    }
+        },
+        validateToken:async(parent,args, context)=>{
+            console.log('el context ',context);
+        }
+    },
 }
 export {resolversAutenticacion};

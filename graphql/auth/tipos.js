@@ -22,6 +22,8 @@ type Mutation{
         correo:String!
         password:String!
     ):Token
+
+    validateToken:Token
 }
 `
 export {tiposAutenticacion};
