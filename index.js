@@ -10,28 +10,26 @@ import { validateToken } from './utils/tokenUtils.js';
 
 dotenv.config();
 
-const getUserData=(token)=>{
-    //const token="eyJ";
-    const verificacion=validateToken(token.split(' ')[1]);
-    if(verificacion.data){
-        return verificacion.data;
-    }
-    else{
-        return null;
-    }
-};
+const getUserData = (token) => {
+    const verificacion = validateToken(token.split(' ')[1]);
+    return verificacion;
+    
+  };
 const server = new ApolloServer({
     typeDefs: tipos,
     resolvers: resolvers,
-    context: ({ req, res }) => {
-      const token = req.headers?.authorization ?? null;
-      if (token) {
-        const userData = getUserData(token);
-        if (userData) {
-          return { userData };
-        }
+    context: ({ req }) => {
+      const token = req.headers.authorization;
+      
+      
+      if (token){
+          const userData=getUserData(token);
+          return userData;
       }
-      return null;
+      else{
+          return null;
+      }      
+     
     },
   });
 
