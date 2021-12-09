@@ -65,6 +65,7 @@ const resolversAutenticacion={
         },
         refreshToken:async(parent,args, context)=>{
             console.log('el context ',context);
+            
             if (!context.userData){
                 return{
                     error:'Token no valido',
