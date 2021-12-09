@@ -13,6 +13,10 @@ input crearObjetivo{
     tipo:Enum_TipoObjetivo!
 }
 
+input camposObjetivo {
+    descripcion: String!
+    tipo: Enum_TipoObjetivo!
+  }
 
 
 type Proyecto{
@@ -68,8 +72,24 @@ type Mutation{
         estado: Enum_EstadoProyecto
         fase:Enum_FaseProyecto
         lider:String
-        objetivos:[crearObjetivo]
     ):Proyecto
+
+    crearObjetivo(
+        idProyecto:String!
+        descripcion:String!
+        tipo:Enum_TipoObjetivo!
+    ):Proyecto
+
+
+    editarObjetivo(
+        idProyecto: String!, 
+        indexObjetivo: Int!, 
+        campos: camposObjetivo!): Proyecto
+
+    eliminarProyecto(idProyecto:String!):Proyecto
+    
+    eliminarObjetivo(idProyecto: String!, idObjetivo: String!): Proyecto
+
 }
 `;
 
