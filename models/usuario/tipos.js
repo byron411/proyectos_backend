@@ -26,6 +26,8 @@ type Query{
     estado:Enum_EstadoUsuario
     rol: Enum_Rol
     ):[Usuario]
+
+    buscarLider:[Usuario]
 }
 type Mutation{
     crearUsuario(

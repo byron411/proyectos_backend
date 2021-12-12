@@ -18,6 +18,10 @@ const resolverUsuario={
             }); 
             return buscado;
         },
+        buscarLider:async(parent,args)=>{
+            const lideres=await UserModel.find({rol:'LIDER'});
+            return lideres;
+        },
        
     },
     Mutation:{
