@@ -50,7 +50,7 @@ const resolversAutenticacion={
                 }
                 else{
                     return{
-                        token:'Error contraseña'
+                        token:'incorrectpass'
                     }
                 }
                 
@@ -58,7 +58,7 @@ const resolversAutenticacion={
             else{
                 console.log('Usuario no encontrado')
                 return{
-                    token:'usuario no encontrado'
+                    token:'notuser'
                 }
             }
            
