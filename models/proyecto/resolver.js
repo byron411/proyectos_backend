@@ -43,7 +43,7 @@ const resolverProyecto={
             fase:args.fase,
             lider:args.lider,
             objetivos:args.objetivos,
-        },{new:true});
+        },{new:true}).populate('lider');
         return elmodificado;
     },
     crearObjetivo:async(parente, args)=>{
