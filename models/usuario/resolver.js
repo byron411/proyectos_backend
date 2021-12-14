@@ -22,6 +22,10 @@ const resolverUsuario={
             const lideres=await UserModel.find({rol:'LIDER'});
             return lideres;
         },
+        buscarEstudiante:async(parent,args)=>{
+            const estudiantes=await UserModel.find({rol:'ESTUDIANTE'});
+            return estudiantes;
+        },
        
     },
     Mutation:{

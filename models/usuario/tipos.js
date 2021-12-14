@@ -28,6 +28,7 @@ type Query{
     ):[Usuario]
 
     buscarLider:[Usuario]
+    buscarEstudiante:[Usuario]
 }
 type Mutation{
     crearUsuario(

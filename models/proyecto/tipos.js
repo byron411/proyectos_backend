@@ -47,6 +47,7 @@ type Query{
         fase:Enum_FaseProyecto
         
     ):[Proyecto]
+    buscarProyectoById(_id:String!):Proyecto
 }
 
 type Mutation{

@@ -14,6 +14,10 @@ const resolverProyecto={
             const buscados=await ProjectModel.find({estado:args.estado});
             return buscados;
         },
+        buscarProyectoById:async(parent,args)=>{
+            const proyecto=await ProjectModel.findById({_id:args._id}).populate('lider');
+            return proyecto;
+        },
     },
     Mutation:{
         crearProyecto: async(parent, args)=>{
