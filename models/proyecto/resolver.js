@@ -30,7 +30,7 @@ const resolverProyecto={
             fase:args.fase,
             lider:args.lider,
             objetivos:args.objetivos,
-        });
+        })
         return elproyecto;
     },
     modificarProyecto:async(parent,args)=>{
