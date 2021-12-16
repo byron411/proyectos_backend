@@ -3,8 +3,8 @@ import { InscriptionModel } from "./isncripcion.js"
 const resolverInscripciones={
     Query:{
         Inscripciones:async(parent,args)=>{
-            const minscripcion=await InscriptionModel.find().populate('proyecto');
-            return minscripcion;
+            const inscripciones=await InscriptionModel.find().populate('proyecto').populate('estudiante');
+            return inscripciones;
         }
     },
     Mutation:{
