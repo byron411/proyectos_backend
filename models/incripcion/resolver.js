@@ -22,7 +22,14 @@ const resolverInscripciones={
                 fechaIngreso:Date.now(),
             },{new:true});
             return inscripcionaprobada;
-        }
+        },
+        rechazarInscripcion:async(parent,args)=>{
+            const inscripcionrechazada=await InscriptionModel.findByIdAndUpdate({_id:args._id},{
+                estado:'RECHAZADO',
+                fechaEgreso:Date.now(),
+            },{new:true});
+            return inscripcionrechazada;
+        },
     }
 }
 export {resolverInscripciones};
