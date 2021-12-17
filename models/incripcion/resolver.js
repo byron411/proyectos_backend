@@ -5,7 +5,11 @@ const resolverInscripciones={
         Inscripciones:async(parent,args)=>{
             const inscripciones=await InscriptionModel.find().populate('proyecto').populate('estudiante');
             return inscripciones;
-        }
+        },
+        inscripcionByEstudiante:async(parent,args)=>{
+            const inscripciones=await InscriptionModel.find({estudiante:args.idEstudiante}).populate('estudiante').populate('proyecto'); 
+            return inscripciones;
+        },
     },
     Mutation:{
         crearInscripcion:async(parent,args)=>{
