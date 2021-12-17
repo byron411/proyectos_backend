@@ -11,7 +11,7 @@ type Inscripcion{
 }
 type Query{
     Inscripciones:[Inscripcion]
-    inscripcionByEstudiante(idEstudiante:String!):[Inscripcion]
+    inscripcionByEstudiante(estudiante:String!):[Inscripcion]
 }
 type Mutation{
     crearInscripcion(

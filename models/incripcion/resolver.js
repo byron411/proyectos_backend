@@ -7,7 +7,7 @@ const resolverInscripciones={
             return inscripciones;
         },
         inscripcionByEstudiante:async(parent,args)=>{
-            const inscripciones=await InscriptionModel.find({estudiante:args.idEstudiante}).populate('estudiante').populate('proyecto'); 
+            const inscripciones=await InscriptionModel.find({estudiante:args.estudiante}).populate('estudiante').populate('proyecto'); 
             return inscripciones;
         },
     },
