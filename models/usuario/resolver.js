@@ -16,6 +16,13 @@ const resolverUsuario={
                         populate:[{path:'lider'},{path:'avances'}],
                     },
                 },
+                {
+                    path:'proyectosLiderados',
+                    populate:{
+                        path:'avances',
+                        populate:[{path:'creadoPor'}],
+                    }
+                },
             ]);
             return buscado;
         },
