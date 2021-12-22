@@ -3,11 +3,23 @@ import { InscriptionModel } from "./isncripcion.js"
 const resolverInscripciones={
     Query:{
         Inscripciones:async(parent,args)=>{
-            const inscripciones=await InscriptionModel.find().populate('proyecto').populate('estudiante');
+            const inscripciones=await InscriptionModel.find().populate('proyecto').populate('estudiante').populate('proyecto.avances');
             return inscripciones;
         },
         inscripcionByEstudiante:async(parent,args)=>{
-            const inscripciones=await InscriptionModel.find({estudiante:args.estudiante}).populate('estudiante').populate('proyecto'); 
+            //const inscripciones=await InscriptionModel.find({estudiante:args.estudiante}).populate('estudiante').populate('proyecto'); 
+            const inscripciones=await InscriptionModel.find({estudiante:args.estudiante}).populate([
+                {
+                    path:'proyecto',
+                    populate:{
+                        path:'avances',
+                        populate:[{path:'proyecto'},{path:'creadoPor'}],
+                    },
+                },
+                {
+                    path:'estudiante',
+                },
+            ]);
             return inscripciones;
         },
     },

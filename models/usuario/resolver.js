@@ -8,7 +8,15 @@ const resolverUsuario={
             return usuarios;
         },
         buscarUsuario: async(parent,args)=>{
-            const buscado= await UserModel.findById({_id:args._id});
+            const buscado= await UserModel.findById({_id:args._id}).populate([
+                {
+                    path:'inscripciones',
+                    populate:{
+                        path:'proyecto',
+                        populate:[{path:'lider'},{path:'avances'}],
+                    },
+                },
+            ]);
             return buscado;
         },
         bucarByCampos: async(parent,args)=>{

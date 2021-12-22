@@ -21,7 +21,7 @@ const getUserData = (token) => {
     typeDefs: tipos,
     resolvers: resolvers,
     context: ({ req, res }) => {
-      const token = req.headers?.authorization ?? null;
+      const token = req.headers.authorization 
       if (token) {
         const userData = getUserData(token);
         if (userData) {

@@ -14,7 +14,7 @@ type Query{
     filtrarAvance(idProyecto:String!):[Avance]
 }
 type Mutation{
-    crearAvance(fecha:Date!
+    crearAvance(fecha:Date
         descripcion:String!
         observaciones:[String]
         proyecto:String!

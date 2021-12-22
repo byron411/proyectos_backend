@@ -15,7 +15,7 @@ const resolverProyecto={
             return buscados;
         },
         buscarProyectoById:async(parent,args)=>{
-            const proyecto=await ProjectModel.findById({_id:args._id}).populate('lider');
+            const proyecto=await ProjectModel.findById({_id:args._id}).populate('lider').populate('avances');
             return proyecto;
         },
     },
